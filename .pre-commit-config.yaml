@@ -1,7 +1,8 @@
 repos:
-  - repo: https://github.com/astral-sh/uv-pre-commit
-    # uv version.
-    rev: 0.10.9
+  - repo: local
     hooks:
-      - id: uv-lock
-        args: [--check]
+      - id: validate-skills
+        name: Validate skills
+        entry: python3 scripts/validate_skills.py
+        language: system
+        pass_filenames: false
