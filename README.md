@@ -6,16 +6,24 @@ This repository collects reusable instructions, helper scripts, and reference ma
 
 ## Skills
 
-Skills are organized by product, then by user-facing capability.
+Skills are organized by product. Each product owns a set of user-facing capabilities, with a `*-core` skill for shared access, authentication, and safety rules.
 
-| Product | Skill | Purpose |
+| Product | Capabilities | Purpose |
 | --- | --- | --- |
-| QDash | [`qdash-core`](skills/qdash/qdash-core/SKILL.md) | Connect agents to QDash through `qdash-client` profiles, read-only helpers, and shared safety rules. |
-| QDash | [`qdash-calibration-inspector`](skills/qdash/qdash-calibration-inspector/SKILL.md) | Inspect chip health, qubit/coupling metrics, task results, trends, AI reviews, and calibration anomalies. |
-| QDash | [`qdash-workflow-operator`](skills/qdash/qdash-workflow-operator/SKILL.md) | Inspect flows, templates, helper files, executions, schedules, file state, and run readiness. |
-| QDash | [`qdash-issue-triage`](skills/qdash/qdash-issue-triage/SKILL.md) | Triage issues, issue knowledge, task-result issues, AI review findings, notes, and support context. |
-| QDash | [`qdash-provenance-analyst`](skills/qdash/qdash-provenance-analyst/SKILL.md) | Analyze parameter lineage, changes, impact, degradation trends, and provenance recommendations. |
-| QDash | [`qdash-reporting`](skills/qdash/qdash-reporting/SKILL.md) | Create daily, weekly, incident, workflow, and experiment reports from QDash data. |
+| [QDash](skills/qdash/) | [`core`](skills/qdash/qdash-core/SKILL.md), [`calibration-inspector`](skills/qdash/qdash-calibration-inspector/SKILL.md), [`workflow-operator`](skills/qdash/qdash-workflow-operator/SKILL.md), [`issue-triage`](skills/qdash/qdash-issue-triage/SKILL.md), [`provenance-analyst`](skills/qdash/qdash-provenance-analyst/SKILL.md), [`reporting`](skills/qdash/qdash-reporting/SKILL.md) | Connect agents to QDash and help users inspect calibration state, operate workflows, triage issues, analyze provenance, and create reports. |
+
+### QDash
+
+QDash skills let agents access QDash through `qdash-client` profiles and work with project-scoped calibration data without exposing credentials.
+
+| Capability | Skill | Use when |
+| --- | --- | --- |
+| Core access | [`qdash-core`](skills/qdash/qdash-core/SKILL.md) | Connecting to QDash, discovering profiles, using read-only API helpers, or applying shared safety rules. |
+| Calibration inspection | [`qdash-calibration-inspector`](skills/qdash/qdash-calibration-inspector/SKILL.md) | Inspecting chip health, qubit/coupling metrics, task results, trends, AI reviews, and calibration anomalies. |
+| Workflow operation | [`qdash-workflow-operator`](skills/qdash/qdash-workflow-operator/SKILL.md) | Inspecting flows, templates, helper files, executions, schedules, file state, and run readiness. |
+| Issue triage | [`qdash-issue-triage`](skills/qdash/qdash-issue-triage/SKILL.md) | Triage of issues, issue knowledge, task-result issues, AI review findings, notes, and support context. |
+| Provenance analysis | [`qdash-provenance-analyst`](skills/qdash/qdash-provenance-analyst/SKILL.md) | Explaining parameter lineage, changes, impact, degradation trends, and provenance recommendations. |
+| Reporting | [`qdash-reporting`](skills/qdash/qdash-reporting/SKILL.md) | Creating daily, weekly, incident, workflow, and experiment reports from QDash data. |
 
 ## Layout
 
@@ -33,11 +41,10 @@ Use `skills/<product>/<product>-<capability>` so product families can grow indep
 
 ## Install
 
-Install skills directly from this repository:
+Install all skills from this repository:
 
 ```bash
-gh skill install oqtopus-team/skills qdash-core --agent codex --scope user
-gh skill install oqtopus-team/skills qdash-calibration-inspector --agent codex --scope user
+gh skill install oqtopus-team/skills --all --agent codex --scope user
 ```
 
 For local development:
