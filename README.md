@@ -41,13 +41,7 @@ Use `skills/<product>/<product>-<capability>` so product families can grow indep
 
 ## Install
 
-Install a product's skills directly from this repository:
-
-```bash
-scripts/install-product-skills.sh qdash --agent codex --scope user
-```
-
-While QDash is the only product in this repository, this also installs all skills:
+Install all skills from this repository:
 
 ```bash
 gh skill install oqtopus-team/skills --all --agent codex --scope user
