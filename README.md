@@ -6,35 +6,44 @@ This repository collects reusable instructions, helper scripts, and reference ma
 
 ## Skills
 
+Skills are organized by product, then by user-facing capability.
+
 | Product | Skill | Purpose |
 | --- | --- | --- |
-| QDash | [`qdash`](skills/qdash/SKILL.md) | Inspect a running QDash instance through `qdash-client` profiles and read-only API helpers. |
+| QDash | [`qdash-core`](skills/qdash/qdash-core/SKILL.md) | Connect agents to QDash through `qdash-client` profiles, read-only helpers, and shared safety rules. |
+| QDash | [`qdash-calibration-inspector`](skills/qdash/qdash-calibration-inspector/SKILL.md) | Inspect chip health, qubit/coupling metrics, task results, trends, AI reviews, and calibration anomalies. |
+| QDash | [`qdash-workflow-operator`](skills/qdash/qdash-workflow-operator/SKILL.md) | Inspect flows, templates, helper files, executions, schedules, file state, and run readiness. |
+| QDash | [`qdash-issue-triage`](skills/qdash/qdash-issue-triage/SKILL.md) | Triage issues, issue knowledge, task-result issues, AI review findings, notes, and support context. |
+| QDash | [`qdash-provenance-analyst`](skills/qdash/qdash-provenance-analyst/SKILL.md) | Analyze parameter lineage, changes, impact, degradation trends, and provenance recommendations. |
+| QDash | [`qdash-reporting`](skills/qdash/qdash-reporting/SKILL.md) | Create daily, weekly, incident, workflow, and experiment reports from QDash data. |
 
 ## Layout
 
 ```text
 skills/
 └── <product>/
-    ├── SKILL.md
-    ├── agents/
-    ├── references/
-    └── scripts/
+    └── <product>-<capability>/
+        ├── SKILL.md
+        ├── agents/
+        ├── references/
+        └── scripts/
 ```
 
-Use `skills/<product>/<skill>` if one product grows multiple independent skills. Keep a single product-level skill at `skills/<product>` while there is only one obvious entry point.
+Use `skills/<product>/<product>-<capability>` so product families can grow independently. Keep shared access, authentication, and safety behavior in a `*-core` skill, then put task-specific judgment in capability skills.
 
 ## Install
 
-Install a skill directly from this repository:
+Install skills directly from this repository:
 
 ```bash
-gh skill install oqtopus-team/skills qdash --agent codex --scope user
+gh skill install oqtopus-team/skills qdash-core --agent codex --scope user
+gh skill install oqtopus-team/skills qdash-calibration-inspector --agent codex --scope user
 ```
 
 For local development:
 
 ```bash
-gh skill install . qdash --from-local --agent codex --scope user --force
+gh skill install . qdash-core --from-local --agent codex --scope user --force
 ```
 
 ## Validate

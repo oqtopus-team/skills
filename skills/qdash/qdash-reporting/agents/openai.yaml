@@ -1,0 +1,4 @@
+interface:
+  display_name: "QDash Reporting"
+  short_description: "Create QDash status and calibration reports"
+  default_prompt: "Use $qdash-reporting to create a concise QDash status report."

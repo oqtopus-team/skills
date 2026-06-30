@@ -1,0 +1,4 @@
+interface:
+  display_name: "QDash Triage"
+  short_description: "Triage QDash issues and known problems"
+  default_prompt: "Use $qdash-issue-triage to summarize open QDash issues and known problems."
