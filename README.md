@@ -41,7 +41,13 @@ Use `skills/<product>/<product>-<capability>` so product families can grow indep
 
 ## Install
 
-Install all skills from this repository:
+Install with the Agent Skills CLI:
+
+```bash
+npx skills add oqtopus-team/skills
+```
+
+Or install with GitHub CLI:
 
 ```bash
 gh skill install oqtopus-team/skills --all --agent codex --scope user
