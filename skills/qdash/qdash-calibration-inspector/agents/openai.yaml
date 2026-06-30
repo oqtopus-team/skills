@@ -1,0 +1,4 @@
+interface:
+  display_name: "QDash Calibration"
+  short_description: "Inspect QDash calibration health and trends"
+  default_prompt: "Use $qdash-calibration-inspector to inspect calibration health in QDash."

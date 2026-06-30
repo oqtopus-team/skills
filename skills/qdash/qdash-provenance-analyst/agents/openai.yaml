@@ -1,0 +1,4 @@
+interface:
+  display_name: "QDash Provenance"
+  short_description: "Analyze QDash parameter lineage and impact"
+  default_prompt: "Use $qdash-provenance-analyst to explain QDash parameter lineage and changes."

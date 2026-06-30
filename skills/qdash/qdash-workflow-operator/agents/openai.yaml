@@ -1,0 +1,4 @@
+interface:
+  display_name: "QDash Workflows"
+  short_description: "Inspect and safely operate QDash workflows"
+  default_prompt: "Use $qdash-workflow-operator to inspect QDash workflows and executions."
