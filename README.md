@@ -44,7 +44,7 @@ Use `skills/<product>/<product>-<capability>` so product families can grow indep
 Install with the Agent Skills CLI:
 
 ```bash
-npx skills add oqtopus-team/skills
+npx skills add oqtopus-team/skills --skill '*' --agent codex --global --yes
 ```
 
 Or install with GitHub CLI:
